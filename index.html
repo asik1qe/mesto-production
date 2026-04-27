@@ -8,9 +8,10 @@
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Mesto</title>
-    <script type="module" crossorigin src="./assets/index-DS7CsIkI.js"></script>
+    <script type="module" crossorigin src="./assets/index-CdLyhR3P.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-BEao-Vn5.css">
   </head>
+
   <body class="page">
     <div class="page__content">
       <header class="header page__section">
@@ -24,15 +25,19 @@
       <main class="content">
         <section class="profile page__section">
           <div class="profile__image"></div>
+
           <div class="profile__info">
             <h1 class="profile__title"></h1>
+
             <button
               class="profile__edit-button"
               type="button"
               aria-label="Редактировать профиль"
             ></button>
+
             <p class="profile__description"></p>
           </div>
+
           <button
             class="profile__add-button"
             type="button"
@@ -56,7 +61,9 @@
             class="popup__close"
             aria-label="Закрыть окно редактирования профиля"
           ></button>
+
           <h3 class="popup__title">Редактировать профиль</h3>
+
           <form class="popup__form" name="edit-profile" novalidate>
             <label class="popup__label">
               <input
@@ -68,11 +75,11 @@
                 required
                 minlength="2"
                 maxlength="40"
-                pattern="^[A-Za-zА-Яа-яЁё\s-]+$"
+                pattern="[A-Za-zА-Яа-яЁё\s\-]+"
                 data-error-message="Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы"
               />
+              <span class="popup__error" id="user-name-error"></span>
             </label>
-            <span class="popup__error" id="user-name-error"></span>
 
             <label class="popup__label">
               <input
@@ -85,8 +92,8 @@
                 minlength="2"
                 maxlength="200"
               />
+              <span class="popup__error" id="user-description-error"></span>
             </label>
-            <span class="popup__error" id="user-description-error"></span>
 
             <button
               type="submit"
@@ -106,7 +113,9 @@
             class="popup__close"
             aria-label="Закрыть окно добавления карточки"
           ></button>
+
           <h3 class="popup__title">Новое место</h3>
+
           <form class="popup__form" name="new-place" novalidate>
             <label class="popup__label">
               <input
@@ -118,11 +127,11 @@
                 required
                 minlength="2"
                 maxlength="30"
-                pattern="^[A-Za-zА-Яа-яЁё\s-]+$"
+                pattern="[A-Za-zА-Яа-яЁё\s\-]+"
                 data-error-message="Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы"
               />
+              <span class="popup__error" id="place-name-error"></span>
             </label>
-            <span class="popup__error" id="place-name-error"></span>
 
             <label class="popup__label">
               <input
@@ -133,8 +142,8 @@
                 placeholder="Ссылка на картинку"
                 required
               />
+              <span class="popup__error" id="place-link-error"></span>
             </label>
-            <span class="popup__error" id="place-link-error"></span>
 
             <button
               type="submit"
@@ -154,6 +163,7 @@
             class="popup__close"
             aria-label="Закрыть окно просмотра изображения"
           ></button>
+
           <img src="" alt="" class="popup__image" />
           <p class="popup__caption"></p>
         </div>
@@ -166,7 +176,9 @@
             class="popup__close"
             aria-label="Закрыть окно обновления аватара"
           ></button>
+
           <h3 class="popup__title">Обновить аватар</h3>
+
           <form class="popup__form" name="edit-avatar" novalidate>
             <label class="popup__label">
               <input
@@ -177,8 +189,8 @@
                 placeholder="Ссылка на изображение"
                 required
               />
+              <span class="popup__error" id="user-avatar-error"></span>
             </label>
-            <span class="popup__error" id="user-avatar-error"></span>
 
             <button
               type="submit"
@@ -198,38 +210,46 @@
             class="popup__close"
             aria-label="Закрыть окно информации о карточке"
           ></button>
+
           <h3 class="popup__title">Информация о карточке</h3>
+
           <dl class="popup__info"></dl>
+
           <p class="popup__text">Пользователи, лайкнувшие карточку:</p>
+
           <ul class="popup__list"></ul>
         </div>
       </div>
     </div>
 
-
     <template id="card-template">
       <li class="places__item card">
         <img class="card__image" src="" alt="" />
+
         <div class="card__control">
           <button
             type="button"
             class="card__control-button card__control-button_type_info"
             aria-label="Показать информацию о карточке"
           ></button>
+
           <button
             type="button"
             class="card__control-button card__control-button_type_delete"
             aria-label="Удалить карточку"
           ></button>
         </div>
+
         <div class="card__description">
           <h2 class="card__title"></h2>
+
           <div class="card__likes">
             <button
               type="button"
               class="card__like-button"
               aria-label="Поставить лайк"
             ></button>
+
             <p class="card__like-count"></p>
           </div>
         </div>
@@ -246,5 +266,6 @@
     <template id="popup-info-user-preview-template">
       <li class="popup__list-item popup__list-item_type_badge"></li>
     </template>
+
   </body>
 </html>
